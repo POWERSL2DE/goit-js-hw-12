@@ -10,7 +10,16 @@
   </head>
 
   <body>
-    <form class="form">
+
+    <div class="preloader">
+      <div class="preloader__row">
+        <p>load</p>
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
+
+    <form class="form" autocomplete="off">
       <input
         class="input"
         name="search"
@@ -18,16 +27,20 @@
         placeholder="Search images..."
         required
         >
-      <button class="button" type="submit" data-start>Search</button>
+        <button type="submit" id="search">Search</button>
     </form>
 
 
     <ul class="gallery"></ul>
-    <button class="button btn hide" type="button" data-action="load-more">Load more</button>
+
+    <button type="button" id="addImg">Load more</button>
+    
     <span class="loader visible"></span>
 
     
     <load ="partials/header.html" />
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
   </body>
 </html>
